@@ -31,8 +31,7 @@ In the top toolbar, click File --> Import. Double-click on General and then `Pro
 Opoly works this way: The board is a circular track of variable length (the user determines the length when the game app runs). There is only one player, who begins the game at position 0.
 Thus, if the board length is 20, then the board locations start at position 0 and end at position 19. The player starts with a reward of 100, and the goal of the game is to reach or exceed reward value 1000. When this reward value is reached or exceeded, the game is over. When the game ends, your program should report the number of turns the player has taken, and the final reward amount attained.
 
-In Opoly the game piece advances via a spinner - a device that takes on one of the values 1, 2, 3, 4, 5 at random, with each of the five spin values equally likely. The spin method you will write simulates a spinner. More about spinners here: http://www.mathsisfun.com/data/spinner.php,
-image of 5-level spinner
+In Opoly the game piece advances via a spinner - a device that takes on one of the values 1, 2, 3, 4, 5 at random, with each of the five spin values equally likely. The spin method you will write simulates a spinner.
 
 The circular nature of the board means that if the player advances to a position beyond the board size, the position will "wrap" around to the beginning. For example, if the board size was 20, the first position would be 0, and the last position would be 19. If a player was on position 18 and the spin result was 4, the new position would be 2. Although there are several ways to calculate this, a convenient way uses modular arithmetic: (position + spinResult) mod boardSize.
 
