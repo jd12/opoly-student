@@ -37,7 +37,11 @@ The circular nature of the board means that if the player advances to a position
 
 Although the board is circular, you should draw the state of the board as a single "line", using an 'o' to represent the current player position, and \* represent all other positions.
 Thus if the board size is 10, then this board drawing:
+
+```
 **o**\*\*\*\*\*
+```
+
 means that the player is at location 2 on the board.
 Here are the other Opoly game rules:
 NOTE: Use the position index for rule calculations. The index starts at 0 and ends at boardLength-1.
