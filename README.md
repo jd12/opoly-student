@@ -35,24 +35,24 @@ In Opoly the game piece advances via a spinner - a device that takes on one of t
 
 The circular nature of the board means that if the player advances to a position beyond the board size, the position will "wrap" around to the beginning. For example, if the board size was 20, the first position would be 0, and the last position would be 19. If a player was on position 18 and the spin result was 4, the new position would be 2. Although there are several ways to calculate this, a convenient way uses modular arithmetic: (position + spinResult) mod boardSize.
 
-Although the board is circular, you should draw the state of the board as a single "line", using an 'o' to represent the current player position, and \* represent all other positions.
+Although the board is circular, you should draw the state of the board as a single "line", using an 'o' to represent the current player position, and * represent all other positions.
 Thus if the board size is 10, then this board drawing:
 
 ```
-**o**\*\*\*\*\*
+**o*******
 ```
 
 means that the player is at location 2 on the board.
 Here are the other Opoly game rules:
 NOTE: Use the position index for rule calculations. The index starts at 0 and ends at boardLength-1.
 
-If your board piece lands on a board cell that is evenly divisible by 7, your reward doubles.
+- If your board piece lands on a board cell that is evenly divisible by 7, your reward doubles.
 
-If you land on the final board cell, you must go back 3 spaces. Thus if the board size is 20, the last position is position 19, and if you land there, you should go back to position 16. (If the position of the last cell is evenly divisible by 7, no extra points are added to the reward, but if the new piece location, 3 places back, IS evenly divisible by 7, then extra points ARE added to the reward).
+- If you land on the final board cell, you must go back 3 spaces. Thus if the board size is 20, the last position is position 19, and if you land there, you should go back to position 16. (If the position of the last cell is evenly divisible by 7, no extra points are added to the reward, but if the new piece location, 3 places back, IS evenly divisible by 7, then extra points ARE added to the reward).
 
-If you make it all the way around the board, you get 100 reward points. Note that if you land exactly on location 0, you first receive 100 extra reward points (for making it all the around), and then your reward score is doubled, since 0 is evenly divisible by 7,
+- If you make it all the way around the board, you get 100 reward points. Note that if you land exactly on location 0, you first receive 100 extra reward points (for making it all the around), and then your reward score is doubled, since 0 is evenly divisible by 7,
 
-Every tenth move (that is, every tenth spin of the spinner, move numbers 10,20,30,... etc.), reduces the reward by 50 points. This penalty is applied before any other rules; as soon as the 10th or 20th or 30th move is made, even if other actions at that instant also apply. Notice that with this rule it's possible for the reward amount to become negative.
+- Every tenth move (that is, every tenth spin of the spinner, move numbers 10,20,30,... etc.), reduces the reward by 50 points. This penalty is applied before any other rules; as soon as the 10th or 20th or 30th move is made, even if other actions at that instant also apply. Notice that with this rule it's possible for the reward amount to become negative.
 
 Here is the driver class for the game:
 
