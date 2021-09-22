@@ -24,7 +24,7 @@ This will create a branch named development and switch you to it. The developmen
 
 You should then go to Eclipse, which hopefully has finished installing.
 
-In the top toolbar, click File --> Import. Double-click on General and then `Projects from Folder or Archive`. Click `Directory` and find the folder inside the repository named `RPS` and click Open. The project should pop up in the text box Projects. Click finish and you should be good to go!
+In the top toolbar, click File --> Import. Double-click on General and then `Projects from Folder or Archive`. Click `Directory` and find the folder inside the repository named `Opoly` and click Open. The project should pop up in the text box Projects. Click finish and you should be good to go!
 
 ## Complete Opoly Assignment
 
